@@ -35,12 +35,14 @@ function MainPage() {
  
 
 
+    //OpenWeather API used to get single weather data of the cityName:London
   const singleApi = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&&appid=${api.key}`
 
 
   const foreCast = (data) => {
     //Destructure the lat and lon from the data
-    const { lat, lon } = data
+    const { lat, lon } = data;
+    //Get the foreCast data 
     const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api.key}`;
     //Get the forCast data from the api
     axios.get(foreCast_api).then(res => {
