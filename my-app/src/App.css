@@ -1,0 +1,41 @@
+
+.card-style{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.card-style{
+  border: none;
+  margin-top: 15px;
+}
+.card-style h3{
+  color: rgb(179, 66, 102);
+}
+.check-box-section{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.check-box-section a{
+  text-decoration: none;
+}
+.graph-heading{
+  padding-left: 50px;
+  font-size: 20rem;
+  font-family: monospace;
+  color: rgb(54, 59, 56);
+}
+.nav-section{
+  display: flex;
+  justify-content: space-between;
+}
+.right-section{
+  margin-right: 100px;
+}
