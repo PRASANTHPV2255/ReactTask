@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import './App.css'
 
 function RegisterPage() {
+  //Navigation
   const nav=useNavigate()
 
   function login(){
@@ -12,7 +13,7 @@ function RegisterPage() {
     nav('/main')
   }
 
-  const [Users, setUsers] = useState([])
+  //States are used to store input data
   const [Name, setName] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
@@ -21,19 +22,16 @@ function RegisterPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Check if all fields are filled
     if (Name && email && password) {
-      // // Create an object with user data
-      // const userData = { Name, email, password };
-
       // Retrieve existing data from localStorage or create an empty array
       const storedData = JSON.parse(localStorage.getItem('userData')) || [];
-      console.log(storedData);
+
+      //check the entered email is existing on the localStorage
       const emailExists = storedData.some(user => user.email === email);
       if(emailExists){
         alert('Email already exist')
       } else{
-        // Create an object with user data
+        // create an object with user data
         const userData = { Name, email, password };
 
         // Add new user data to the array
@@ -41,14 +39,12 @@ function RegisterPage() {
   
         // Save the updated array to localStorage
         localStorage.setItem('userData', JSON.stringify(updatedData));
+         // Clear input fields
         setName('');
         setemail('');
         setpassword('');
-  
-        console.log('Data added:', userData);
+        nav('/main')
       }
-
-      // Clear input fields
     } else {
       alert('Please fill in all fields.');
     }

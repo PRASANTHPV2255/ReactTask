@@ -11,6 +11,7 @@ import Settings from './components/Profile/Settings';
 function App() {
   return (
     <div className="App">
+      {/* Defining Path for different routes */}
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<RegisterPage/>}/>

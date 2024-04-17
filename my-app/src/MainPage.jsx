@@ -11,6 +11,7 @@ import {useNavigate} from 'react-router-dom'
 
 function MainPage() {
 
+  //Navigation
   const nav=useNavigate();
 
   const profile=()=>{
@@ -29,23 +30,24 @@ function MainPage() {
     key: '25e30fbb0ed7ee679ba1fb1163052e8a'
   }
   const [singleDataName, setsingleDataName] = useState('')
-  const [singleData, setsingleData] = useState([])
   const [forecastData, setforecastData] =
     useState([])
-  const [selectedData, setSelectedData] = useState()
+ 
 
 
   const singleApi = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&&appid=${api.key}`
 
 
   const foreCast = (data) => {
+    //Destructure the lat and lon from the data
     const { lat, lon } = data
     const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api.key}`;
+    //Get the forCast data from the api
     axios.get(foreCast_api).then(res => {
       let data = res.data;
+      //Sliced the data into 10 
       let TenForecast = data.list.slice(0, 10);
       setforecastData(TenForecast)
-      // console.log(TenForecast);
     }).catch((err) => {
       console.log('Error', err)
     })
@@ -55,9 +57,10 @@ function MainPage() {
 
 
   useEffect(() => {
+    //Get the single data from the api
     axios.get(singleApi).then(res => {
       setsingleDataName(res?.data.name)
-      setsingleData(res.data)
+      //Passed the necessary data to forCast function
       foreCast(res.data.coord)
     })
   }, [])

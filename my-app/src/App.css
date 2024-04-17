@@ -39,3 +39,6 @@
 .right-section{
   margin-right: 100px;
 }
+.Profile-nav-bar{
+  display: flex;
+}

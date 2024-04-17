@@ -16,7 +16,6 @@ function BarChart({ foreCast, dataUpdate }) {
       {
         type: 'interval',
         yField: (data) => {
-          // console.log(data);
           return data?.main.temp - 273.15
         },
         style: { maxWidth: 80 },
