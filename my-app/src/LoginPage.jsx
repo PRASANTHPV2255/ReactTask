@@ -13,29 +13,29 @@ function LoginPage() {
   }
   return (
     <div>
-      <nav class="navbar bg-body-tertiary">
-        <form class="container-fluid justify-content-start">
-          <button class="btn btn-outline-success me-2" type="button" onClick={register}>Register</button>
+      <nav className="navbar bg-body-tertiary">
+        <form className="container-fluid justify-content-start">
+          <button className="btn btn-outline-success me-2" type="button" onClick={register}>Register</button>
         </form>
       </nav>
       <div className='login'>
-        <div class="card card-style" style={{width: "18rem"}}>
+        <div className="card card-style" style={{width: "18rem"}}>
           <h3>Login</h3>
         </div>
-      <div class="card card-style" style={{width: "18rem"}}>
+      <div className="card card-style" style={{width: "18rem"}}>
       
-          <div class="form-floating mb-3">
-              <input  type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+          <div className="form-floating mb-3">
+              <input  type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
               <label for="floatingInput">Email address</label>
           </div>
-          <div class="form-floating">
-            <input  type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+          <div className="form-floating">
+            <input  type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
             <label for="floatingPassword">Password</label>
           </div>
           <div className='check-box-section'>
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label class="form-check-label" for="flexCheckDefault">
+                <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <label className="form-check-label" for="flexCheckDefault">
                 Checked 
               </label>
               </div>
@@ -45,8 +45,8 @@ function LoginPage() {
             
           </div>
         </div>
-        <div class="card card-style" style={{width: "18rem"}}>
-          <button type="button" class="btn btn-outline-secondary" onClick={main}>
+        <div className="card card-style" style={{width: "18rem"}}>
+          <button type="button" className="btn btn-outline-secondary" onClick={main}>
             Login
           </button>
         </div>

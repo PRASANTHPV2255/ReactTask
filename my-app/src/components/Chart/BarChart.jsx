@@ -30,8 +30,9 @@ function BarChart({ foreCast, dataUpdate }) {
     ],
   };
   return (
-    <div>
+    <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
       <DualAxes {...config}  />;
+      <h3 style={{fontSize:'50px'}}>ForeCast</h3>
     </div>
   )
 };

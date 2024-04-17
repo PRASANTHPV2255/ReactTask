@@ -43,7 +43,7 @@ function PieChart({foreCast}) {
   };
 
   return (
-    <div style={{height: '65%', width: '100%', alignContent: 'center'}}>
+    <div style={{height: '65%', width: '100%', alignContent: 'center',color:'black'}}>
       {data&&
       <Pie {...config} />}
     </div>
