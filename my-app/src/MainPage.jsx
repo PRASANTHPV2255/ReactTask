@@ -26,9 +26,8 @@ function MainPage() {
 
 
 
-  const api = {
-    key: '25e30fbb0ed7ee679ba1fb1163052e8a'
-  }
+  
+  const Api_key='25e30fbb0ed7ee679ba1fb1163052e8a'
   const [singleDataName, setsingleDataName] = useState('')
   const [forecastData, setforecastData] =
     useState([])
@@ -36,14 +35,14 @@ function MainPage() {
 
 
     //OpenWeather API used to get single weather data of the cityName:London
-  const singleApi = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&&appid=${api.key}`
+  const singleApi = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&&appid=${Api_key}`
 
 
   const foreCast = (data) => {
     //Destructure the lat and lon from the data
     const { lat, lon } = data;
     //Get the foreCast data 
-    const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api.key}`;
+    const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Api_key}`;
     //Get the forCast data from the api
     axios.get(foreCast_api).then(res => {
       let data = res.data;
