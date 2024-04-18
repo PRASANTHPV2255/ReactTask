@@ -38,13 +38,13 @@ function MainPage() {
   const singleApi = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&&appid=${Api_key}`
 
 
-  const foreCast = (data) => {
+  const foreCast = async(data) => {
     //Destructure the lat and lon from the data
     const { lat, lon } = data;
     //Get the foreCast data 
     const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Api_key}`;
     //Get the forCast data from the api
-    axios.get(foreCast_api).then(res => {
+    await axios.get(foreCast_api).then(res => {
       let data = res.data;
       //Sliced the data into 10 
       let TenForecast = data.list.slice(0, 10);
