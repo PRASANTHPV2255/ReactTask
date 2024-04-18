@@ -46,8 +46,8 @@ function MainPage() {
     await axios.get(foreCast_api).then(res => {
       // let data = res.data;
       //Sliced the data into 10 
-      let TenForecast = res.data.list.slice(0, 10);
-      setforecastData(TenForecast)
+      // let TenForecast = res.data.list.slice(0, 10);
+      setforecastData(res.data.list.slice(0, 10))
     }).catch((err) => {
       console.log('Error', err)
     })
@@ -62,7 +62,6 @@ function MainPage() {
       setsingleDataName(res?.data.name)
       //Passed the necessary data to forCast function
       foreCast(res.data.coord)
-      console.log(res.data);
     })
   }, [])
 
