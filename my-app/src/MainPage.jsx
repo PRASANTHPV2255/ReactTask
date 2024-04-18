@@ -41,7 +41,7 @@ function MainPage() {
     //Destructure the lat and lon from the data
     const { lat, lon } = data;
     //Get the foreCast data 
-    const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Api_key}`;
+    const foreCast_api = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Api_key}`;
     //Get the forCast data from the api
     await axios.get(foreCast_api).then(res => {
       // let data = res.data;
