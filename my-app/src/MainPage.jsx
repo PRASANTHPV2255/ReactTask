@@ -29,8 +29,7 @@ function MainPage() {
   
   const Api_key='25e30fbb0ed7ee679ba1fb1163052e8a'
   const [singleDataName, setsingleDataName] = useState('')
-  const [forecastData, setforecastData] =
-    useState([])
+  const [forecastData, setforecastData] =useState([])
  
 
 
@@ -45,9 +44,9 @@ function MainPage() {
     const foreCast_api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Api_key}`;
     //Get the forCast data from the api
     await axios.get(foreCast_api).then(res => {
-      let data = res.data;
+      // let data = res.data;
       //Sliced the data into 10 
-      let TenForecast = data.list.slice(0, 10);
+      let TenForecast = res.data.list.slice(0, 10);
       setforecastData(TenForecast)
     }).catch((err) => {
       console.log('Error', err)
@@ -63,6 +62,7 @@ function MainPage() {
       setsingleDataName(res?.data.name)
       //Passed the necessary data to forCast function
       foreCast(res.data.coord)
+      console.log(res.data);
     })
   }, [])
 
